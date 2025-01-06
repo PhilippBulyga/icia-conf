@@ -1,0 +1,8 @@
+@use "../../_base/mixin";
+@use "../../_base/variable";
+
+.is-section{
+  @include mixin.widthHeight(100%, auto);
+  margin-bottom: 15px;
+  &:first-child{margin: 15px 0;}
+}

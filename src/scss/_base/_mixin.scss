@@ -70,7 +70,7 @@
   max-width: $maxWidthValue;
   object-fit: $objectValue;
   border-radius: $borderRadius;
-  transition: all $transitionValue easy-in-out;
+  transition: all $transitionValue ease-in-out;
 }
 
 //Image shadow
@@ -164,4 +164,59 @@
     color: $txColor;
     border: $brWidth solid $txColor;
   }
+}
+
+/********************/
+/* Animation mixins */
+/********************/
+/*left visible animation*/
+@mixin leftVisibleAnimation($transitionTime: 2s){
+  opacity: 0;
+  transform: translateX(-150%);
+  animation: leftPosition $transitionTime forwards;
+}
+@mixin rightVisibleAnimation($transitionTime: 2s){
+  opacity: 0;
+  transform: translateX(150%);
+  animation: rightPosition $transitionTime forwards;
+}
+@mixin opacityVisibleAnimation($transitionTime: 2s){
+  opacity: 0;
+  animation: opacityVisible $transitionTime forwards;
+}
+
+@keyframes leftPosition {
+  0%{transform: translateX(-150%); opacity: 0; display: none}
+  100%{transform: translateX(0); opacity: 1; display: flex}
+}
+@keyframes leftPositionRemove {
+  0%{transform: translateX(0); opacity: 1;}
+  100%{transform: translateX(-150%); opacity: 0;}
+}
+/*right visible animation*/
+@keyframes rightPosition {
+  0%{transform: translateX(150%); opacity: 0;}
+  100%{transform: translateX(0); opacity: 1;}
+}
+@keyframes bottomPosition {
+  0%{transform: translateY(150%); opacity: 0;}
+  100%{transform: translateY(0); opacity: 1;}
+}
+/*opacity visible animation*/
+@keyframes opacityVisible {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+/*pulse animation*/
+@keyframes pulse {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+@keyframes rotateAnimation {
+  100%{transform: rotate(90deg); opacity: 1;}
+}
+@keyframes scaleImage {
+  0%{transform: scale(1)}
+  100%{transform: scale(1.3)}
 }

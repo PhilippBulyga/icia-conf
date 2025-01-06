@@ -16,9 +16,15 @@
 * General styles
 */
 @use "_styles/_general-styles/site-logo";
+@use "_styles/_general-styles/site-sections";
 
 /*
 * Main components styles
 */
 @use "_styles/header";
 @use "_styles/footer";
+
+/*
+* Pages
+*/
+@use "_styles/_pages/homePage";

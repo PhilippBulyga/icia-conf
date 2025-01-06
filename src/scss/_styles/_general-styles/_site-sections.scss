@@ -6,3 +6,20 @@
   margin-bottom: 15px;
   &:first-child{margin: 15px 0;}
 }
+
+.section__title{
+  @include mixin.fontSettings(500, 32px, 1.5, variable.$color-main-blue, left);
+  margin-bottom: 25px;
+}
+@media screen and (max-width: 500px){
+  .section__title{
+    @include mixin.fontSettings(500, 24px, 1.2, variable.$color-main-blue, left);
+    margin-bottom: 5px;
+  }
+}
+@media screen and (max-width: 400px){
+  .section__title{
+    @include mixin.fontSettings(500, 24px, 1.2, variable.$color-main-blue, center);
+    margin-bottom: 5px;
+  }
+}

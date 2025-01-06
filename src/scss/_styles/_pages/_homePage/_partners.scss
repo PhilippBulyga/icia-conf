@@ -1,0 +1,33 @@
+@use "../../../_base/mixin";
+@use "../../../_base/variable";
+
+.partners-container{
+  @include mixin.widthHeight(100%, auto);
+  @include mixin.displayFlex(flex-start, flex-start, column, 15px);
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.75);
+  border-radius: 30px;
+  padding: 45px 45px 45px 45px;
+}
+.partners-list{
+  @include mixin.widthHeight(100%, auto);
+  @include mixin.displayGrid(repeat(auto-fill, minmax(200px, 1fr)), 10px 45px);
+  align-items: center;
+  &__item{
+    @include mixin.widthHeight(100%, auto);
+  }
+  &__link{
+    @include mixin.widthHeight(200px, 145px);
+    @include mixin.displayFlex(center, center);
+    & > picture > source,
+    & > picture > img,
+    & > img{
+      @include mixin.imageStyles(200px, 145px, contain);
+    }
+  }
+}
+@media screen and (max-width: 990px){
+  .partners-list{
+    @include mixin.displayGrid(repeat(auto-fill, minmax(200px, 1fr)), 10px 45px);
+    &__item{ @include mixin.displayFlex(center, center); }
+  }
+}

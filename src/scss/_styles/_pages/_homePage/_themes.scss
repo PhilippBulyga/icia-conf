@@ -1,0 +1,79 @@
+@use "../../../_base/mixin";
+@use "../../../_base/variable";
+
+.themes-container{
+  @include mixin.widthHeight(100%, auto);
+  @include mixin.displayFlex(flex-start, flex-start, column, 15px);
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.75);
+  border-radius: 30px;
+  padding: 45px 45px 90px 45px;
+}
+.themes__list{
+  @include mixin.widthHeight(100%, auto);
+  @include mixin.displayGrid(1fr 1fr, 40px 65px);
+  &-item{
+    @include mixin.displayGrid(45px 1fr, 25px);
+    align-items: center;
+    @include mixin.fontSettings(400, 16px, 1.35, variable.$color-main-black, left);
+    position: relative;
+    &:before{
+      @include mixin.underlineText(100%, 1px, variable.$color-main-blue, auto, 0, -20px);
+    }
+    & > span:first-child{
+      position: relative;
+      @include mixin.widthHeight(45px, 45px);
+      @include mixin.displayFlex(center, center);
+      border-radius: 50%;
+      border: 1px solid variable.$color-main-blue;
+    }
+  }
+}
+@media screen and (max-width: 750px){
+  .themes__list{
+    grid-template-columns: 1fr;
+    &-item{
+      grid-gap: 15px;
+      grid-template-columns: 30px 1fr;
+      align-items: center;
+      font-size: 18px;
+      & > span:first-child{ @include mixin.widthHeight(35px, 35px); }
+    }
+  }
+}
+@media screen and (max-width: 400px){
+  .themes-container{
+    padding: 20px 20px 40px 20px;
+  }
+  .themes__list{
+    grid-template-columns: 1fr;
+    grid-gap: 30px 65px;
+    &-item{
+      grid-gap: 15px;
+      grid-template-columns: 30px 1fr;
+      align-items: center;
+      font-size: 14px;
+      &:before{
+        @include mixin.underlineText(100%, 1px, variable.$color-main-blue, auto, 0, -15px);
+      }
+      &:last-child:before{display: none;}
+      & > span:first-child{ @include mixin.widthHeight(35px, 35px); }
+    }
+  }
+}
+@media screen and (max-width: 300px){
+  .themes-container{
+    padding: 20px 20px 40px 20px;
+  }
+  .themes__list{
+    grid-template-columns: 1fr;
+    grid-gap: 30px 65px;
+    &-item{
+      grid-template-columns: 1fr;
+      align-items: center;
+      font-size: 14px;
+      text-align: center;
+      &:before{ bottom: -15px; }
+      & > span:first-child{ display: none }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+@use "../_base/mixin";
+@use "../_base/variable";
+
+.footer{
+  @include mixin.widthHeight(100%, auto);
+  @include mixin.displayFlex(center, flex-start, column, 0px);
+  position: relative;
+  box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.1);
+
+  &-container{
+    @include mixin.widthHeight(100%, auto);
+    @include mixin.displayFlex(center, space-between, row, 25px);
+    padding: 20px 15px;
+    &_bottom{
+      @include mixin.widthHeight(100%, auto);
+      @include mixin.displayFlex(center, center, column, 5px);
+      background-color: variable.$color-main-blue;
+      padding: 10px 0;
+      & > p, & > a{ @include mixin.fontSettings(200, 14px, 1.2, variable.$color-main-white, center); }
+      & > a{text-decoration: underline;}
+    }
+  }
+}
+//Footer logo section
+.footer-logo__section{
+  @include mixin.widthHeight(100%, auto);
+  @include mixin.displayFlex(center, center, column, 5px);
+  max-width: 350px;
+  & > p{@include mixin.fontSettings(500, 14px, 1.5, variable.$color-additional-black, center);}
+}
+//Footer menu list
+.footer-menu__list{
+  @include mixin.widthHeight(auto, auto);
+  @include mixin.displayFlex(flex-start, center, column, 10px);
+  &-item{ @include mixin.widthHeight(100%, auto); text-align: center; }
+  &-link{
+    @include mixin.widthHeight(100%, auto);
+    @include mixin.fontSettings(600, 16px, 1.2, variable.$color-additional-black, center);
+  }
+}
+//Footer contacts block
+.footer-main__contacts{
+  @include mixin.widthHeight(auto, auto);
+  @include mixin.displayFlex(center, flex-start, column, 25px);
+  &-title{
+    @include mixin.fontSettings(600, 16px, 1.2, variable.$color-additional-black, center);
+    position: relative;
+    &:after{
+      @include mixin.underlineText(100%, 2px, variable.$color-additional-black);
+      bottom: -3px;
+    }
+  }
+}
+
+.footer-main__contacts-list{
+  @include mixin.widthHeight(100%, auto);
+  @include mixin.displayFlex(center, flex-start, column, 15px);
+
+  & > li{
+    @include mixin.widthHeight(100%, auto);
+    @include mixin.displayGrid(1fr 1fr, 10px);
+
+    & > a{
+      @include mixin.fontSettings(600, 16px, 1.2, variable.$color-additional-black, center);
+      align-self: center;
+      justify-self: center;
+      position: relative;
+      &:after{
+        @include mixin.underlineText(100%, 2px, variable.$color-additional-black);
+        bottom: -2px;
+      }
+    }
+  }
+}
+.footer-main__contacts-list-text-block{
+  @include mixin.widthHeight(100%, auto);
+  @include mixin.displayFlex(flex-start, center, column, 0px);
+}
+.footer-main__contacts-list-text{
+  @include mixin.fontSettings(500, 14px, 1.2, variable.$color-additional-black, center);
+  &_small{
+    @include mixin.fontSettings(500, 12px, 1.2, variable.$color-additional-black, center);
+  }
+}
+
+@media screen and (max-width: 1200px){ .footer-logo__section{ max-width: 285px; } }
+@media screen and (max-width: 1130px){
+  .footer-logo__section{ width: auto; max-width: none;
+    & > p{display: none;}
+  }
+}
+@media screen and (max-width: 920px){
+  .footer{
+    &-container{
+      @include mixin.displayGrid(1fr 1fr, 20px);
+    }
+  }
+  .footer-logo__section{ width: auto; max-width: none;
+    & > p{display: block;}
+  }
+  .footer-menu__list{display: none;}
+}
+@media screen and (max-width: 700px){
+  .footer{
+    &-container{
+      @include mixin.displayGrid(1fr, 20px);
+    }
+  }
+  .footer-logo__section{ width: auto; max-width: none;
+    & > p{display: block;}
+  }
+  .footer-menu__list{display: flex; margin: 20px 0;}
+}
+@media screen and (max-width: 400px){
+  .footer-main__contacts-list{  & > li{ grid-template-columns: 1fr; } }
+  .footer-menu__list{display: none;}
+  .footer-main__contacts{
+    gap: 10px;
+    margin-top: 10px;
+    &-title{ &:after{ background-color: transparent; } }
+  }
+  .footer-main__contacts-list-text-block{align-items: center;}
+}

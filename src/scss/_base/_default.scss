@@ -1,0 +1,26 @@
+$container-width: 1200px;
+$container-padding: 20px;
+
+html, body{height: 100%}
+body{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 27px;
+  font-family: "Montserrat", serif;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #ffffff;
+}
+.main{ display: flex; flex: 1 0 auto; flex-direction: column;}
+.footer{ display: flex; flex: 0 0 auto; }
+.container{max-width: $container-width + $container-padding * 2; margin: 0 auto; padding: 0 15px; }
+
+.displayNone{display: none !important;}
+.displayShow{display: flex !important;}
+
+img{
+  width: 150px;
+  height: 100px;
+}

@@ -1,0 +1,23 @@
+@use "../_base/mixin";
+@use "../_base/variable";
+
+.mobile-burger{
+  @include mixin.widthHeight(40px, 40px);
+  @include mixin.displayFlex(center, center, column, 7px);
+  @include mixin.linkButton(#fff, 5px, 0px);
+  justify-self: end;
+  z-index: 999;
+  display: none;
+
+  & > span{
+    @include mixin.widthHeight(30px, 3px);
+    background-color: variable.$color-main-blue;
+    transition: all 0.3s;
+    display: block;
+  }
+}
+.mobile-menu-span-first{ transform: translate(6px, -1px) rotate(45deg); transform-origin: left top; }
+.mobile-menu-span-second{ transform: scale(0); }
+.mobile-menu-span-third{ transform: translate(-3px, -21px) rotate(-45deg); transform-origin: right bottom; }
+
+@media screen and (max-width: 920px){  .mobile-burger{ display: flex; }  }

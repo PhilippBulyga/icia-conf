@@ -1,0 +1,71 @@
+@use "../_base/mixin";
+@use "../_base/variable";
+
+.header{
+  @include mixin.widthHeight(100%, auto);
+  position: relative;
+  box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.1);
+
+  &-container{
+    @include mixin.widthHeight(100%, auto);
+    @include mixin.displayFlex(center, space-between, row, 25px);
+    padding: 20px 15px;
+  }
+}
+
+.header-menu__list-link{
+  background-image: linear-gradient(to right,  variable.$color-main-blue,  variable.$color-main-blue 50%,  variable.$color-additional-black 50% );
+  background-size: 200% 100%;
+  background-position: -100%;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+  @include mixin.fontSettings(500, 16px, 36px, variable.$color-additional-black, center);
+  &:before{
+    @include mixin.underlineText(0, 2px, variable.$color-main-blue, auto, -3px, 0, auto);
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover{background-position: 0; &:before{width: 100%;} }
+}
+
+.header-menu{
+  @include mixin.widthHeight(auto, auto);
+  @include mixin.displayFlex(center, center);
+
+  &__list{
+    @include mixin.widthHeight(100%, auto);
+    @include mixin.displayFlex(center, center, row, 20px);
+    &-item_current{
+      & > a{
+        &:before{
+          @include mixin.underlineText(100%, 2px, variable.$color-main-blue, auto, -3px, 0, auto);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 990px){
+  .header-menu{
+    display: none;
+    @include mixin.widthHeight(100%, auto);
+    @include mixin.positionSettings(absolute, 120px, 0, auto, 0);
+    background-color: rgba(255,255,255,.75);
+    box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.1);
+    padding: 35px 0;
+    z-index: 999;
+    &__list{ flex-direction: column; align-items: flex-start; padding-left: 15px; }
+  }
+  .header-menu__list-link{ text-transform: uppercase; }
+}
+@media screen and (max-width: 450px){
+  .header{ &-container{ padding: 10px 10px; }  }
+
+  .header-menu{ padding: 15px 0; top: 80px;
+    &__list{ gap: 5px; }
+  }
+  .header-menu__list-link{font-size: 14px; line-height: 32px;}
+}

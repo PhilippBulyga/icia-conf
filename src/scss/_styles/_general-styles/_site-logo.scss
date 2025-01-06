@@ -1,0 +1,17 @@
+@use "../../_base/mixin";
+@use "../../_base/variable";
+
+.site-logo__link{
+  @include mixin.widthHeight(80px, 80px);
+  max-width: 80px;
+
+  & > picture > source,
+  & > picture > img,
+  & > img, & > .site-logo__image{
+    @include mixin.widthHeight(100%, auto);
+  }
+}
+
+@media screen and (max-width: 450px){
+  .site-logo__link{ @include mixin.widthHeight(60px, 60px); max-width: 60px; }
+}

@@ -1,0 +1,23 @@
+/*
+* Main site styles
+*/
+@use "_base/variable";
+@use "_base/mixin";
+@use "_base/reset";
+@use "_base/default";
+
+/*
+* Main featches styles
+*/
+@use "_featches/fc-dropdown";
+@use "_featches/fc-mobile-menu";
+
+/*
+* General styles
+*/
+@use "_styles/_general-styles/site-logo";
+
+/*
+* Main components styles
+*/
+@use "_styles/header";

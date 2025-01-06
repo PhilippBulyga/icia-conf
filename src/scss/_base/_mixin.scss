@@ -1,0 +1,167 @@
+/*****************/
+/* Layout mixins */
+/*****************/
+
+//Grid mixin
+@mixin displayGrid(
+  $grisColumns: 1fr,
+  $gapGrid: 0px,
+){
+  display: grid;
+  grid-template-columns: $grisColumns;
+  grid-gap: $gapGrid;
+}
+
+//Flex mixin
+@mixin displayFlex(
+  $alignItems: flex-start,
+  $justifyContent: flex-start,
+  $flexDirection: row,
+  $flexGap: 0px,
+){
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+  flex-direction: $flexDirection;
+  gap: $flexGap;
+}
+
+//Width mixin
+@mixin widthHeight(
+  $widthValue: 100%,
+  $heightValue: auto
+){
+  width: $widthValue;
+  height: $heightValue;
+}
+
+//Position mixin
+@mixin positionSettings(
+  $positionValue: absolute,
+  $topValue: auto,
+  $rightValue: auto,
+  $bottomValue: auto,
+  $leftValue: auto
+){
+  position: $positionValue;
+  top: $topValue;
+  right: $rightValue;
+  bottom: $bottomValue;
+  left: $leftValue;
+}
+
+
+
+/*****************/
+/* Images mixins */
+/*****************/
+
+//Main image settings
+@mixin imageStyles(
+  $widthValue: 100%,
+  $heightValue: auto,
+  $objectValue: cover,
+  $borderRadius: 0,
+  $transitionValue: .3s,
+  $maxWidthValue: 100%
+){
+  width: $widthValue;
+  height: $heightValue;
+  max-width: $maxWidthValue;
+  object-fit: $objectValue;
+  border-radius: $borderRadius;
+  transition: all $transitionValue easy-in-out;
+}
+
+//Image shadow
+@mixin imageShadow(
+  $borderRadius: 0px,
+  $shadowValue: .45
+){
+  &:after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,$shadowValue);
+    border-radius: $borderRadius;
+  }
+}
+
+//Image scale animation
+@mixin imageScale( $scaleValue: 1.1 )
+{ transform: scale($scaleValue); }
+
+
+
+/****************/
+/* Fonts mixins */
+/****************/
+
+/* Fonts main styles */
+@mixin fontSettings(
+  $fontWeight: 400,
+  $fontSize: 14px,
+  $lineHeight: 1.2,
+  $colorValue: #000000,
+  $textAlign: start,
+){
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  color: $colorValue;
+  text-align: $textAlign;
+}
+
+@mixin underlineText(
+  $wdValue: 100%,
+  $hgValue: 1px,
+  $bgColor: #000,
+  $topValue: auto,
+  $rightValue: 0,
+  $bottomValue: 0,
+  $leftValue: 0
+){
+  content: '';
+  @include widthHeight($wdValue, $hgValue);
+  @include positionSettings(absolute, $topValue, $rightValue, $bottomValue, $leftValue);
+  background-color: $bgColor;
+}
+
+
+/*****************/
+/* Button mixins */
+/*****************/
+
+//Link button
+@mixin linkButton(
+  $bgColor: #fff, $brRadius: 0px,
+  $pdValue: 0px, $brWidth: 1px,
+  $tranValue: .3s, $border: false,
+  $brColor: transparent
+){
+  background-color: $bgColor;
+  border-radius: $brRadius;
+  padding: $pdValue;
+  @if $border{ border: $brWidth solid $brColor; }
+  @else{ border: $brWidth solid $bgColor; }
+  transition: all $tranValue ease-out;
+  cursor: pointer;
+}
+
+//Button hover effect
+@mixin btnHover(
+  $bgColor: #fff,
+  $txColor: #000,
+  $brWidth: 1px
+){
+  &:hover{
+    background-color: $bgColor;
+    color: $txColor;
+    border: $brWidth solid $txColor;
+  }
+}

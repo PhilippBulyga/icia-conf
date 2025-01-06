@@ -4,14 +4,14 @@
 .custom-dropdown__button{
   @include mixin.fontSettings(600, 16px, 1.2, variable.$color-main-blue, center);
   background-color: variable.$color-main-white;
-  padding: 10px 16px;
+  padding: 6px 16px;
   border: none;
   cursor: pointer;
   position: relative;
 
   &:after{
     content: '\2BC6';
-    @include mixin.positionSettings(absolute, 8px, -2px);
+    @include mixin.positionSettings(absolute, 5px, -2px);
   }
 }
 
@@ -29,9 +29,8 @@
 }
 
 @media screen and (max-width: 1130px){
-  .custom-dropdown__button{ font-size: 14px;
-    &:after{ font-size: 14px; top: 9px; }
+  .custom-dropdown__button{
+    &:after{ font-size: 14px; top: 6px; }
   }
-  .custom-dropdown__content a { font-size: 14px; }
 }
 //@media screen and (max-width: 400px){  .custom-dropdown__button{ display: none; }  }

@@ -3,7 +3,6 @@
 /*********************************/
 const mobileMenuButton = document.querySelector('.mobile-burger');
 const mobileMenuNavbar = document.querySelector('.header-menu');
-console.log(mobileMenuButton)
 const mobileSpanAnimation = () => {
     mobileMenuButton.children[0].classList.toggle('mobile-menu-span-first');
     mobileMenuButton.children[1].classList.toggle('mobile-menu-span-second');

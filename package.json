@@ -1,0 +1,54 @@
+{
+  "name": "icia-conference-site",
+  "version": "1.0.0",
+  "description": "Site of international technical conference",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhilippBulyga/icia-conf.git"
+  },
+  "keywords": [
+    "Conference",
+    "Wordpress",
+    "IS&IT"
+  ],
+  "author": "Bulyga Philipp phillbleck@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PhilippBulyga/icia-conf/issues"
+  },
+  "homepage": "https://github.com/PhilippBulyga/icia-conf#readme",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "css-loader": "^7.1.2",
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-changed": "^4.0.3",
+    "gulp-clean": "^0.4.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-file-include": "^2.3.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^9.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-notify": "^5.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^6.0.0",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-server-livereload": "^1.9.2",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-webp": "^5.0.0",
+    "gulp-webp-html-nosvg": "^1.1.1",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpeg-recompress": "^7.1.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-svgo": "^11.0.1",
+    "sass": "^1.83.0",
+    "style-loader": "^4.0.0"
+  }
+}

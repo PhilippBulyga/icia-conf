@@ -185,54 +185,29 @@
   animation: opacityVisible $transitionTime forwards;
 }
 
-@keyframes leftPosition {
-  0%{transform: translateX(-150%); opacity: 0; display: none}
-  100%{transform: translateX(0); opacity: 1; display: flex}
-}
-@keyframes leftPositionRemove {
-  0%{transform: translateX(0); opacity: 1;}
-  100%{transform: translateX(-150%); opacity: 0;}
-}
-/*right visible animation*/
-@keyframes rightPosition {
-  0%{transform: translateX(150%); opacity: 0;}
-  100%{transform: translateX(0); opacity: 1;}
-}
-@keyframes bottomPosition {
-  0%{transform: translateY(150%); opacity: 0;}
-  100%{transform: translateY(0); opacity: 1;}
+/*scale image animation*/
+@keyframes scaleImage {
+  0%{transform: scale(1)}
+  100%{transform: scale(1.3)}
 }
 /*opacity visible animation*/
 @keyframes opacityVisible {
   0%{opacity: 0;}
   100%{opacity: 1;}
 }
-/*pulse animation*/
-@keyframes pulse {
-  0% { transform: scale(0.5); opacity: 0; }
-  50% { opacity: 1; }
-  100% { transform: scale(1.2); opacity: 0; }
-}
-@keyframes rotateAnimation {
-  100%{transform: rotate(90deg); opacity: 1;}
-}
-@keyframes scaleImage {
-  0%{transform: scale(1)}
-  100%{transform: scale(1.3)}
-}
 
 .animationLeftBlock{ opacity: 0;  &.animationLeft{ opacity: 1; }  }
-.animationLeft{ animation: 1s leftPosition ease-in-out; }
+.animationLeft{ animation: .5s leftPosition ease-in-out; }
 @keyframes leftPosition {
-  0%{transform: translateX(-150%); opacity: 0; display: none; visibility: hidden;}
-  100%{transform: translateX(0); opacity: 1; display: flex; visibility: visible;}
+  0%{transform: translateX(-150%); opacity: 0; visibility: hidden;}
+  100%{transform: translateX(0); opacity: 1; visibility: visible;}
 }
 
 .animationRightBlock{ opacity: 0;  &.animationRight{ opacity: 1; }  }
-.animationRight{ animation: 1s rightPosition ease-in-out; }
+.animationRight{ animation: .5s rightPosition ease-in-out; }
 @keyframes rightPosition {
-  0%{transform: translateX(150%); opacity: 0; display: none; visibility: hidden;}
-  100%{transform: translateX(0); opacity: 1; display: flex; visibility: visible;}
+  0%{transform: translateX(150%); opacity: 0; visibility: hidden;}
+  100%{transform: translateX(0); opacity: 1; visibility: visible;}
 }
 
 .animationOpacityBlock{ opacity: 0;  &.animationOpacity{ opacity: 1; }  }

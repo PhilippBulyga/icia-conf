@@ -1,109 +1,73 @@
 @use "../../../_base/mixin";
 @use "../../../_base/variable";
 
-.time-steps__container{
-  @include mixin.widthHeight(100%, auto);
-  @include mixin.displayFlex(flex-start, flex-start, column, 15px);
-  @include mixin.opacityVisibleAnimation(4s);
-  box-shadow: 0 0 2px 0 rgba(0,0,0,0.75);
-  border-radius: 30px;
-  padding: 30px;
+/*******************************************/
+/* Date block main layout and links styles */
+/*******************************************/
+.date-container{
+  @include mixin.opacityVisibleAnimation(3s);
 }
-.time-steps__information{
+.date__info{
   @include mixin.widthHeight(100%, auto);
-  @include mixin.displayGrid(250px 1fr, 20px);
+  @include mixin.displayGrid(220px 1fr, 20px 25px);
 }
-.time-steps__information-list{
-  @include mixin.widthHeight(auto, auto);
-  @include mixin.displayFlex(flex-start, flex-start, column, 20px);
+.date__info-list{
+  @include mixin.widthHeight(100%, auto);
+  @include mixin.displayFlex(flex-start, flex-start, column, 25px);
   &-item{
-    @include mixin.widthHeight(100%, auto);
-    & > a{
-      @include mixin.fontSettings(500, 16px, 1.5, variable.$color-main-blue, left);
-      position: relative;
-      &:before{
-        @include mixin.underlineText(70%, 1px, variable.$color-main-blue);
-      }
-      &:after{
-        content: '\2197';
-        @include mixin.positionSettings(absolute, 0, 80px, 0);
-        color: variable.$color-main-blue;
-      }
-    }
+    @include mixin.widthHeight(75%, auto);
+    position: relative;
+    &:before{ @include mixin.underlineText(100%, 1px, variable.$color-main-blue); }
+    &:after{ content: '\2197'; @include mixin.positionSettings(absolute, 0, 0, auto); color: variable.$color-main-blue; }
   }
+  &-link{ @include mixin.fontSettings(500, 16px, 1.5, variable.$color-main-blue, left);}
 }
 
-.time-steps__information-data{
+/*******************************/
+/* Date block data info styles */
+/*******************************/
+.date__info-data{
   @include mixin.widthHeight(100%, auto);
   @include mixin.displayGrid(1fr 1fr, 20px 25px);
-}
-.time-steps__information-elem{
-  @include mixin.widthHeight(100%, auto);
-  @include mixin.displayFlex(flex-start, flex-start, column, 5px);
-  &-title{ @include mixin.fontSettings(600, 16px, 1.2, variable.$color-main-black); }
-  &-text{
-    @include mixin.fontSettings(400, 14px, 1.4, variable.$color-additional-black);
-    margin-left: 10px;
-    & > span{ @include mixin.fontSettings(500, 14px, 1.2, variable.$color-main-black); }
-    &_sub{ font-style: italic; grid-column: span 2}
+  &-elem{
+    @include mixin.widthHeight(100%, auto);
+    @include mixin.displayFlex(flex-start, flex-start, column, 5px);
+    &-title{@include mixin.fontSettings(600, 16px, 1.2, variable.$color-main-black); margin-bottom: 5px;}
+    &-text{
+      @include mixin.fontSettings(400, 14px, 1.4, variable.$color-additional-black);
+      margin-left: 10px;
+      & > span{ @include mixin.fontSettings(500, 14px, 1.2, variable.$color-main-black); }
+      &_sub{ font-style: italic; grid-column: span 2}
+    }
   }
 }
 
-@media screen and (max-width: 990px){
-  .time-steps__information{ @include mixin.displayGrid(1fr, 55px); }
-  .time-steps__information-list{
+/***************************/
+/* Date block media styles */
+/***************************/
+@media screen and (max-width: 900px){
+  .date__info{ grid-template-columns: 1fr; grid-gap: 40px;}
+  .date__info-list{
     grid-row: 2;
-    justify-content: space-evenly;
     flex-direction: row;
-    &-item{
-      & > a{
-        @include mixin.fontSettings(500, 14px, 1.5, variable.$color-main-blue, left);
-        &:before{ display: none; }
-        &:after{ content: ''; }
-      }
-    }
+    &-item{ text-align: center;  &:before{ display: none; }  &:after{ display: none; }  }
   }
 }
-@media screen and (max-width: 500px){
-  .time-steps__information{ @include mixin.displayGrid(1fr, 55px); }
-  .time-steps__information-list{
-    grid-row: 2;
-    justify-content: space-evenly;
-    flex-direction: column;
-    &-item{
-      & > a{
-        @include mixin.fontSettings(500, 14px, 1.5, variable.$color-main-blue, left);
-        &:after{ content: '\2197'; right: auto; left: 145px;}
-      }
-    }
+@media screen and (max-width: 600px){
+  .date__info{ grid-template-columns: 1fr; grid-gap: 40px;}
+  .date__info-list{ flex-direction: column;
+    &-item{ text-align: left; }
   }
-  .time-steps__information-data{
-    @include mixin.widthHeight(100%, auto);
-    @include mixin.displayGrid(1fr, 20px 25px);
+  .date__info-data{ grid-template-columns: 1fr;
+    &-elem{ &-text{ &_sub{ grid-column: span 1; } } }
   }
-  .time-steps__information-elem{ &-text{ &_sub{ grid-column: span 1} } }
 }
 @media screen and (max-width: 400px){
-  .time-steps__information{ @include mixin.displayGrid(1fr, 55px); }
-  .time-steps__information-list{
-    grid-row: 2;
-    justify-content: space-evenly;
-    flex-direction: column;
-    &-item{
-      & > a{
-        @include mixin.fontSettings(500, 14px, 1.5, variable.$color-main-blue, left);
-        &:after{ content: '\2197'; right: auto; left: 145px;}
-      }
-    }
+  .date__info{ grid-template-columns: 1fr; grid-gap: 40px;}
+  .date__info-list{ flex-direction: column; gap: 15px;
+    &-item{ text-align: left; }
   }
-  .time-steps__information-data{
-    @include mixin.widthHeight(100%, auto);
-    @include mixin.displayGrid(1fr, 20px 25px);
-  }
-  .time-steps__information-elem{
-    &-text{
-      font-size: 12px;
-      &_sub{ display: none; }
-    }
+  .date__info-data{ grid-template-columns: 1fr;
+    &-elem{ &-text{ &_sub{ display: none; } } }
   }
 }

@@ -1,0 +1,29 @@
+@use "../../../_base/mixin";
+@use "../../../_base/variable";
+
+.archive-list{
+  @include mixin.widthHeight(100%, auto);
+  @include mixin.displayGrid(repeat(auto-fill, minmax(250px, 1fr)), 40px 30px);
+  &__item{
+    @include mixin.widthHeight(100%, auto);
+    border: 1px solid #e5e7eb;
+    border-radius: 30px;
+    padding: 30px;
+  }
+  &__link{
+    @include mixin.widthHeight(100%, auto);
+    @include mixin.displayFlex(center, center, column, 10px);
+    & > picture > source,
+    & > picture > img,
+    & > img{ @include mixin.imageStyles(100px, 100px); }
+
+    & > p{ @include mixin.fontSettings(400, 16px, 1.5, variable.$color-additional-black, center); }
+  }
+}
+
+@media screen and (max-width: 300px){
+  .archive-list{
+    grid-template-columns: 1fr;
+    &__item{ padding: 20px; }
+  }
+}

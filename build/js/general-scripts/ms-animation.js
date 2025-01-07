@@ -1,6 +1,6 @@
 const opacityMainAnimation = (opacityElement, opacityClass) => {
     [...opacityElement].forEach(opacityElementSingle => {
-        opacityElementSingle.getBoundingClientRect().top < window.innerHeight - 150
+        opacityElementSingle.getBoundingClientRect().top < window.innerHeight - 100
             ? opacityElementSingle.classList.add(opacityClass) : null;
     })
 };

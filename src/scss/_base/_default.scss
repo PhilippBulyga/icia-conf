@@ -15,7 +15,12 @@ body{
 }
 .main{ display: flex; flex: 1 0 auto; flex-direction: column;}
 .footer{ display: flex; flex: 0 0 auto; }
-.container{max-width: $container-width + $container-padding * 2; margin: 0 auto; padding: 0 15px; }
+.container{
+  width: 100%;
+  max-width: $container-width + $container-padding * 2;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
 .displayNone{display: none !important;}
 .displayShow{display: flex !important;}

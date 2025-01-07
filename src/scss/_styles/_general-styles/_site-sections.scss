@@ -1,6 +1,70 @@
 @use "../../_base/mixin";
 @use "../../_base/variable";
 
+.section-general-styles{
+  @include mixin.widthHeight(100% auto);
+  margin-bottom: 15px;
+  &:first-child{ margin: 35px 0; }
+}
+.section-container{
+  @include mixin.widthHeight(100%, auto);
+  box-shadow: 0 0 1.5px 0 rgba(0,0,0,.75);
+  border-radius: 30px;
+  padding: 30px;
+}
+
+
+.section-general{
+  @include mixin.widthHeight(100%, auto);
+  border-radius: 30px;
+  margin-bottom: 35px;
+  &:first-child{ margin: 35px 0;}
+}
+.section-general_border{
+  @include mixin.widthHeight(100%, auto);
+  border: 1px solid #e5e7eb;
+  border-radius: 30px;
+  padding: 30px;
+  margin-bottom: 35px;
+  &:first-child{ margin: 35px 0;}
+}
+.section-general__h1-title{
+  @include mixin.fontSettings(500, 36px, 1.5, variable.$color-main-blue, left);
+  position: relative;
+  margin-bottom: 25px;
+}
+.section-title{
+  @include mixin.fontSettings(500, 32px, 1.5, variable.$color-main-blue, left);
+  margin-bottom: 35px;
+}
+@media screen and (max-width: 500px){
+  .section-title{
+    @include mixin.fontSettings(500, 24px, 1.2, variable.$color-main-blue, left);
+    margin-bottom: 35px;
+  }
+}
+
+
+/*
+* Publication archive
+*/
+.breadcrumbs-block{
+  @include mixin.widthHeight(100%, auto);
+  @include mixin.displayFlex(center, flex-start, row, 5px);
+  margin: 30px 0;
+  &__item{
+    @include mixin.widthHeight(auto, auto);
+    position: relative;
+    &:not(:last-child):after{ content: "\2192"; }
+    &:last-child{ & > a{ font-weight: 400; } }
+  }
+  &__link{
+    @include mixin.fontSettings(500, 14px, 1.2, variable.$color-additional-black, left);
+    &_last{ font-weight: 400;}
+  }
+}
+
+
 .is-section{
   @include mixin.widthHeight(100%, auto);
   margin-bottom: 15px;

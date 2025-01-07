@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -12,7 +12,7 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="header">
+<header class="header">
     <div class="header-container container">
         <a href="/" class="site-logo__link">
             <img src="./images/isit-logo.svg" alt="IS&IT - международный научно-технический конгресс, интеллектуальных систем и технологий" class="site-logo__image">
@@ -21,7 +21,7 @@
         <nav class="header-menu">
             <ul class="header-menu__list">
                 <li class="header-menu__list-item header-menu__list-item_current"><a href="#" class="header-menu__list-link">Комитеты и программа</a></li>
-                <li class="header-menu__list-item"><a href="#" class="header-menu__list-link">Архив</a></li>
+                <li class="header-menu__list-item"><a href="/archive.html" class="header-menu__list-link">Архив</a></li>
                 <li class="header-menu__list-item"><a href="#" class="header-menu__list-link">Условия участия</a></li>
                 <li class="header-menu__list-item"><a href="#" class="header-menu__list-link">Контакты</a></li>
                 <li class="header-menu__list-item"><a href="#" class="header-menu__list-link">Регистрация публикации</a></li>
@@ -39,124 +39,137 @@
     </div>
 </header>
 
-    <main class="main">
-
-        <section class="is-section">
-            <div class="main-banner__container container">
-                <div class="banner__section banner__section_first">
-                    <h1 class="banner-title">
-                        Международный научно-технический конгресс IS&IT 2025
-                    </h1>
-                    <p class="banner-text">Интеллектуальные системы и информационные технологии</p>
-                    <a href="/" class="banner-link">Зарегистрировать публикацию <img class="banner-link__icon" src="./images/icons/arrow-up.svg" alt=""></a>
-                </div>
-                <div class="banner__section banner__section_second">
-                    <picture><source srcset="./images/conference-main.webp" type="image/webp"><img src="./images/conference-main.jpg" alt="" class="banner__section-image"></picture>
-                </div>
+<main class="main">
+    <div class="container">
+        <section class="section-general banner-section">
+            <div class="banner-section__block banner-section__block_first">
+                <h1 class="banner-section__title">Международный научно-технический конгресс IS&IT 2025</h1>
+                <p class="banner-section__text">Интеллектуальные системы и информационные технологии</p>
+                <a class="banner-section__link" href="/">
+                    Зарегистрировать публикацию
+                    <img class="banner-section__link-icon" src="./images/icons/arrow-up.svg" alt="">
+                </a>
+            </div>
+            <div class="banner-section__block banner-section__block_second">
+                <img class="banner-section__block-image" src="./images/conference-main.jpg"
+                     alt="Международный научно-технический конгресс IS&IT 2025 конференция Россия">
             </div>
         </section>
 
-        <section class="is-section">
-            <div class="container">
-                <div class="time-steps__container">
-                    <h2 class="section__title">Основные даты и сроки</h2>
-                    <div class="time-steps__information">
-                        <ul class="time-steps__information-list">
-                            <li class="time-steps__information-list-item">
-                                <a href="#" class="time-steps__information-list">Условия участия</a>
-                            </li>
-                            <li class="time-steps__information-list-item">
-                                <a href="#" class="time-steps__information-list">Регистрация</a>
-                            </li>
-                            <li class="time-steps__information-list-item">
-                                <a href="#" class="time-steps__information-list">Для авторов</a>
-                            </li>
-                        </ul>
+        <section class="date-container section-general_border">
+            <h2 class="section-title">Основные даты и сроки</h2>
+            <div class="date__info">
+                <ul class="date__info-list">
+                    <li class="date__info-list-item">
+                        <a href="#" class="date__info-list-link">Условия участия</a>
+                    </li>
+                    <li class="date__info-list-item">
+                        <a href="#" class="date__info-list-link">Регистрация</a>
+                    </li>
+                    <li class="date__info-list-item">
+                        <a href="#" class="date__info-list-link">Для авторов</a>
+                    </li>
+                </ul>
 
-                        <div class="time-steps__information-data">
-                            <div class="time-steps__information-elem">
-                                <p class="time-steps__information-elem-title">Конференция</p>
-                                <p class="time-steps__information-elem-text"><span>Регистрация участников:</span> 01.09.2024</p>
-                                <p class="time-steps__information-elem-text"><span>Начало заседаний:</span> 02.09.2024</p>
-                            </div>
-                            <div class="time-steps__information-elem">
-                                <p class="time-steps__information-elem-title">Регистрация</p>
-                                <p class="time-steps__information-elem-text"><span>Прием заявок с:</span> 15.04.2025</p>
-                                <p class="time-steps__information-elem-text"><span>Прием текстов докладов до:</span> 01.07.2025</p>
-                            </div>
-                            <div class="time-steps__information-elem">
-                                <p class="time-steps__information-elem-title">Представление статьи для публикации</p>
-                                <p class="time-steps__information-elem-text">Полнотекстные статьи принимаются для публикации в материалах конференции до <span>25.07.2025</span></p>
-                            </div>
-                            <div class="time-steps__information-elem">
-                                <p class="time-steps__information-elem-title">Публикация материалов</p>
-                                <p class="time-steps__information-elem-text">Печатный сборник материалов (РИНЦ): <span>02.09.2025</span></p>
-                                <p class="time-steps__information-elem-text">Електронная версия сборника материалов (РИНЦ): <span>10.09.2025</span></p>
-                            </div>
-                            <p class="time-steps__information-elem-text time-steps__information-elem-text_sub">*Организаторами конференции рекомендуется осуществлять отправку полнотекстных статей ранее установленного срока.</p>
-                        </div>
-                    </div>
-                </div>
+                <ul class="date__info-data">
+                    <li class="date__info-data-elem">
+                        <p class="date__info-data-elem-title">Конференция</p>
+                        <p class="date__info-data-elem-text"><span>Регистрация участников:</span> 01.09.2024</p>
+                        <p class="date__info-data-elem-text"><span>Начало заседаний:</span> 02.09.2024</p>
+                    </li>
+                    <li class="date__info-data-elem">
+                        <p class="date__info-data-elem-title">Регистрация</p>
+                        <p class="date__info-data-elem-text"><span>Прием заявок с:</span> 15.04.2025</p>
+                        <p class="date__info-data-elem-text"><span>Прием текстов докладов до:</span> 01.07.2025</p>
+                    </li>
+                    <li class="date__info-data-elem">
+                        <p class="date__info-data-elem-title">Представление статьи для публикации</p>
+                        <p class="date__info-data-elem-text">Полнотекстные статьи принимаются для публикации в
+                            материалах конференции до <span>25.07.2025</span></p>
+                    </li>
+                    <li class="date__info-data-elem">
+                        <p class="date__info-data-elem-title">Публикация материалов</p>
+                        <p class="date__info-data-elem-text">Печатный сборник материалов (РИНЦ): <span>02.09.2025</span></p>
+                        <p class="date__info-data-elem-text">Електронная версия сборника материалов (РИНЦ): <span>10.09.2025</span></p>
+                    </li>
+                    <li class="date__info-data-elem-text date__info-data-elem-text_sub">
+                        *Организаторами конференции рекомендуется осуществлять отправку полнотекстных статей ранее установленного срока.
+                    </li>
+                </ul>
             </div>
         </section>
 
-        <section class="is-section animationLeftBlock">
-            <div class="container">
-                <div class="themes-container ">
-                    <h2 class="section__title">Тематика конгресса</h2>
-                    <ul class="themes__list">
-                        <li class="themes__list-item"><span>01</span> <span>Биоинформатика</span></li>
-                        <li class="themes__list-item"><span>02</span> <span>Интеллектуальные САПР, CASE-, CALS-технологии</span></li>
-                        <li class="themes__list-item"><span>03</span> <span>Искусственный интеллект и мягкие вычисления</span></li>
-                        <li class="themes__list-item"><span>04</span> <span>Представление и извлечение знаний</span></li>
-                        <li class="themes__list-item"><span>05</span> <span>Многоагентные системы и принятие решений</span></li>
-                        <li class="themes__list-item"><span>06</span> <span>Перспективные информационные технологии</span></li>
-                        <li class="themes__list-item"><span>07</span> <span>Проблемы образования</span></li>
-                        <li class="themes__list-item"><span>08</span> <span>Синергетика и моделирование сложных систем</span></li>
-                        <li class="themes__list-item"><span>08</span> <span>Эволюционное моделирование и генетические алгоритмы</span></li>
-                        <li class="themes__list-item"><span>10</span> <span>Экспертные системы</span></li>
-                        <li class="themes__list-item"><span>11</span> <span>Информационная безопасность</span></li>
-                        <li class="themes__list-item"><span>12</span> <span>Инструментальные, математические и информационные средства экономики</span></li>
-                        <li class="themes__list-item"><span>13</span> <span>SAP-технологии</span></li>
-                    </ul>
-                </div>
-            </div>
+        <section class="themes-container section-general_border animationLeftBlock">
+            <h2 class="section-title">Тематика конгресса</h2>
+            <ul class="themes__list">
+                <li class="themes__list-item"><span>01</span> <span>Биоинформатика</span></li>
+                <li class="themes__list-item"><span>02</span>
+                    <span>Интеллектуальные САПР, CASE-, CALS-технологии</span></li>
+                <li class="themes__list-item"><span>03</span>
+                    <span>Искусственный интеллект и мягкие вычисления</span></li>
+                <li class="themes__list-item"><span>04</span> <span>Представление и извлечение знаний</span></li>
+                <li class="themes__list-item"><span>05</span> <span>Многоагентные системы и принятие решений</span>
+                </li>
+                <li class="themes__list-item"><span>06</span> <span>Перспективные информационные технологии</span>
+                </li>
+                <li class="themes__list-item"><span>07</span> <span>Проблемы образования</span></li>
+                <li class="themes__list-item"><span>08</span>
+                    <span>Синергетика и моделирование сложных систем</span></li>
+                <li class="themes__list-item"><span>09</span> <span>Эволюционное моделирование и генетические алгоритмы</span>
+                </li>
+                <li class="themes__list-item"><span>10</span> <span>Экспертные системы</span></li>
+                <li class="themes__list-item"><span>11</span> <span>Информационная безопасность</span></li>
+                <li class="themes__list-item"><span>12</span> <span>Инструментальные, математические и информационные средства экономики</span>
+                </li>
+                <li class="themes__list-item"><span>13</span> <span>SAP-технологии</span></li>
+            </ul>
         </section>
 
-        <section class="is-section animationRightBlock">
-            <div class="container">
-                <div class="partners-container">
-                    <h2 class="section__title">Основные организаторы и партнёры</h2>
-                    <ul class="partners-list">
-                        <li class="partners-list__item">
-                            <a href="" class="partners-list__link"><picture><source srcset="./images/partners/sfedu-logo-001.webp" type="image/webp"><img src="./images/partners/sfedu-logo-001.jpg" alt="" class="partners-list__image"></picture></a>
-                        </li>
-                        <li class="partners-list__item">
-                            <a href="" class="partners-list__link"><picture><source srcset="./images/partners/Université_d'Artois-001.webp" type="image/webp"><img src="./images/partners/Université_d'Artois-001.png" alt="" class="partners-list__image"></picture></a>
-                        </li>
-                        <li class="partners-list__item">
-                            <a href="" class="partners-list__link"><picture><source srcset="./images/partners/ran-logo.webp" type="image/webp"><img src="./images/partners/ran-logo.png" alt="" class="partners-list__image"></picture></a>
-                        </li>
-                        <li class="partners-list__item">
-                            <a href="" class="partners-list__link"><picture><source srcset="./images/partners/ictis-logo-001.webp" type="image/webp"><img src="./images/partners/ictis-logo-001.png" alt="" class="partners-list__image"></picture></a>
-                        </li>
-                        <li class="partners-list__item">
-                            <a href="" class="partners-list__link"><picture><source srcset="./images/partners/sap-university-alliances-logo-001.webp" type="image/webp"><img src="./images/partners/sap-university-alliances-logo-001.png" alt="" class="partners-list__image"></picture></a>
-                        </li>
-                        <li class="partners-list__item">
-                            <a href="" class="partners-list__link"><picture><source srcset="./images/partners/aviaok-logo-001.webp" type="image/webp"><img src="./images/partners/aviaok-logo-001.png" alt="" class="partners-list__image"></picture></a>
-                        </li>
-                        <li class="partners-list__item">
-                            <a href="" class="partners-list__link"><picture><source srcset="./images/partners/reallab-logo-001.webp" type="image/webp"><img src="./images/partners/reallab-logo-001.jpg" alt="" class="partners-list__image"></picture></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <section class="partners-container section-general_border animationRightBlock">
+            <h2 class="section-title">Основные организаторы и партнёры</h2>
+            <ul class="partners__list">
+                <li class="partners__list-item">
+                    <a href="" class="partners__list-link">
+                        <picture><source srcset="./images/partners/sfedu-logo-001.webp" type="image/webp"><img src="./images/partners/sfedu-logo-001.jpg" alt="" class="partners-list__image"></picture>
+                    </a>
+                </li>
+                <li class="partners__list-item">
+                    <a href="" class="partners__list-link">
+                        <picture><source srcset="./images/partners/Université_d'Artois-001.webp" type="image/webp"><img src="./images/partners/Université_d'Artois-001.png" alt="" class="partners-list__image"></picture>
+                    </a>
+                </li>
+                <li class="partners__list-item">
+                    <a href="" class="partners__list-link">
+                        <picture><source srcset="./images/partners/ran-logo.webp" type="image/webp"><img src="./images/partners/ran-logo.png" alt="" class="partners-list__image"></picture>
+                    </a>
+                </li>
+                <li class="partners__list-item">
+                    <a href="" class="partners__list-link">
+                        <picture><source srcset="./images/partners/ictis-logo-001.webp" type="image/webp"><img src="./images/partners/ictis-logo-001.png" alt="" class="partners-list__image"></picture>
+                    </a>
+                </li>
+                <li class="partners__list-item">
+                    <a href="" class="partners__list-link">
+                        <picture><source srcset="./images/partners/sap-university-alliances-logo-001.webp" type="image/webp"><img src="./images/partners/sap-university-alliances-logo-001.png" alt="" class="partners-list__image"></picture>
+                    </a>
+                </li>
+                <li class="partners__list-item">
+                    <a href="" class="partners__list-link">
+                        <picture><source srcset="./images/partners/aviaok-logo-001.webp" type="image/webp"><img src="./images/partners/aviaok-logo-001.png" alt="" class="partners-list__image"></picture>
+                    </a>
+                </li>
+                <li class="partners__list-item">
+                    <a href="" class="partners__list-link">
+                        <picture><source srcset="./images/partners/reallab-logo-001.webp" type="image/webp"><img src="./images/partners/reallab-logo-001.jpg" alt="" class="partners-list__image"></picture>
+                    </a>
+                </li>
+            </ul>
         </section>
+    </div>
 
-    </main>
+</main>
 
-    <footer class="footer">
+<footer class="footer">
     <div class="footer-container container">
         <div class="footer-logo__section">
             <a href="/" class="site-logo__link">
@@ -207,6 +220,6 @@
         <a href="/policy">Политика конфиденциальности</a>
     </div>
 </footer>
-    <script src="./js/ms-scripts.js"></script>
+<script src="./js/ms-scripts.js"></script>
 </body>
 </html>

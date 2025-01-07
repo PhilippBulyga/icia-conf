@@ -1,33 +1,41 @@
 @use "../../../_base/mixin";
 @use "../../../_base/variable";
 
-.partners-container{
+
+.partners-container{ @include mixin.widthHeight(100%, auto); }
+.partners__list{
   @include mixin.widthHeight(100%, auto);
-  @include mixin.displayFlex(flex-start, flex-start, column, 15px);
-  box-shadow: 0 0 2px 0 rgba(0,0,0,0.75);
-  border-radius: 30px;
-  padding: 45px 45px 45px 45px;
-}
-.partners-list{
-  @include mixin.widthHeight(100%, auto);
-  @include mixin.displayGrid(repeat(auto-fill, minmax(200px, 1fr)), 10px 45px);
+  @include mixin.displayGrid(repeat(auto-fill, minmax(250px, 1fr)), 45px 40px);
   align-items: center;
-  &__item{
-    @include mixin.widthHeight(100%, auto);
-  }
-  &__link{
-    @include mixin.widthHeight(200px, 145px);
+  &-item{ @include mixin.widthHeight(100%, auto); }
+  &-link{
+    @include mixin.widthHeight(200px, 150px);
     @include mixin.displayFlex(center, center);
     & > picture > source,
     & > picture > img,
-    & > img{
-      @include mixin.imageStyles(200px, 145px, contain);
+    & > img{ @include mixin.imageStyles(200px, 150px, contain); }
+  }
+}
+
+@media screen and (max-width: 920px){
+  .partners__list{ grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    &-link{
+      @include mixin.widthHeight(200px, 110px);
+      & > picture > source,
+      & > picture > img,
+      & > img{ @include mixin.imageStyles(200px, 110px, contain); }
     }
   }
 }
-@media screen and (max-width: 990px){
-  .partners-list{
-    @include mixin.displayGrid(repeat(auto-fill, minmax(200px, 1fr)), 10px 45px);
-    &__item{ @include mixin.displayFlex(center, center); }
+@media screen and (max-width: 750px){
+  .partners__list{ grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 30px 20px;
+    &-item{justify-items: center;}
+    &-link{
+      @include mixin.widthHeight(150px, 150px);
+      & > picture > source,
+      & > picture > img,
+      & > img{ @include mixin.imageStyles(150px, 150px, contain); }
+    }
   }
 }

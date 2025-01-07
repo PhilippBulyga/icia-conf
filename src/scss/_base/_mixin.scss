@@ -197,14 +197,14 @@
 }
 
 .animationLeftBlock{ opacity: 0;  &.animationLeft{ opacity: 1; }  }
-.animationLeft{ animation: .5s leftPosition ease-in-out; }
+.animationLeft{ animation: 1.5s leftPosition ease-in-out; }
 @keyframes leftPosition {
   0%{transform: translateX(-150%); opacity: 0; visibility: hidden;}
   100%{transform: translateX(0); opacity: 1; visibility: visible;}
 }
 
 .animationRightBlock{ opacity: 0;  &.animationRight{ opacity: 1; }  }
-.animationRight{ animation: .5s rightPosition ease-in-out; }
+.animationRight{ animation: 1.5s rightPosition ease-in-out; }
 @keyframes rightPosition {
   0%{transform: translateX(150%); opacity: 0; visibility: hidden;}
   100%{transform: translateX(0); opacity: 1; visibility: visible;}

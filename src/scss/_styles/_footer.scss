@@ -6,6 +6,7 @@
   @include mixin.displayFlex(center, flex-start, column, 0px);
   position: relative;
   box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.1);
+  margin-top: 60px;
 
   &-container{
     @include mixin.widthHeight(100%, auto);
